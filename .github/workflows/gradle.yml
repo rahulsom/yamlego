@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    uses: rahulsom/_/gradle/gradle.yml@main
+    uses: rahulsom/_/.github/workflows/gradle/gradle.yml@main
     with:
       # Defaults (can be overriden here)
       java-version: 21
