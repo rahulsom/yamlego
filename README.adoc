@@ -1,0 +1,49 @@
+= Yamlego
+:snapshot-prefix: image:https://img.shields.io/maven-metadata/v?metadataUrl=https%3A%2F%2Fcentral.sonatype.com%2Frepository%2Fmaven-snapshots%2Fio%2Fgithub%2Frahulsom%2F
+:snapshot-middle: %2Fmaven-metadata.xml&style=for-the-badge&label=S[alt=Maven Snapshot,height=30,link="https://central.sonatype.com/service/rest/repository/browse/maven-snapshots/io/github/rahulsom/
+:snapshot-suffix: /"]
+:central-prefix: image:https://img.shields.io/maven-central/v/io.github.rahulsom/
+:central-middle: ?style=for-the-badge&label=R&color=green[alt=Maven Central Version,height=30,link="https://central.sonatype.com/artifact/io.github.rahulsom/
+:central-suffix: /overview"]
+:deprecated-middle: ?style=for-the-badge&label=R&color=lightgrey[alt=Maven Central Version,height=30,link="https://central.sonatype.com/artifact/io.github.rahulsom/
+
+Yamlego is a _Not too high-level, not too low-level, YAML API_.
+Jackson is too high-level. You cannot use it for refactoring if you have anchors and references.
+SnakeYaml Engine is too low-level. You need to make sense of individual events.
+Yamlego uses SnakeYaml Engine to give you useful abstractions to work with YAML documents.
+
+image:https://img.shields.io/coverallsCoverage/github/rahulsom/yamlego?branch=main&style=for-the-badge[Coveralls, link="https://coveralls.io/github/rahulsom/yamlego"]
+&nbsp;
+image:https://img.shields.io/github/commits-since/rahulsom/yamlego/latest?style=for-the-badge[GitHub commits since latest release, link="https://github.com/rahulsom/yamlego/releases/new"]
+
+== Usage
+
+[source]
+----
+https://repo.maven.apache.org/maven2/
+----
+
+For snapshots, use this url.
+
+[source]
+----
+https://central.sonatype.com/repository/maven-snapshots/
+----
+
+The maven group id is `io.github.rahulsom`.
+
+== Available versions
+
+|===
+|Module |REST
+
+|`yamlego-core`
+|{central-prefix}yamlego-core{central-middle}yamlego-core{central-suffix} {snapshot-prefix}yamlego-core{snapshot-middle}yamlego-core{snapshot-suffix}
+
+|===
+
+== Development
+
+Install JDK 21 first.
+
+To build, run `./gradlew build`.
