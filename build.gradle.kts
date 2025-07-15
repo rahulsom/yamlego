@@ -13,7 +13,7 @@ plugins {
 }
 
 allprojects {
-    group = "io.github.pulpogato"
+    group = "io.github.rahulsom"
 }
 
 subprojects {

@@ -11,4 +11,4 @@ develocity {
 }
 
 rootProject.name = "yamlego-root"
-include("core")
+include("yamlego-core")
