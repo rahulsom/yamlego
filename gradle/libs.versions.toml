@@ -1,15 +1,11 @@
 [versions]
 assertj-core = "3.+"
-commons-math3 = "3.6.1"
-guava = "33.4.8-jre"
 junit-jupiter = "5.+"
 snakeyaml-engine = "2.+"
 waena = "0.12.0"
 
 [libraries]
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj-core" }
-commons-math3 = { module = "org.apache.commons:commons-math3", version.ref = "commons-math3" }
-guava = { module = "com.google.guava:guava", version.ref = "guava" }
 junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter" }
 snakeyaml-engine = { module = "org.snakeyaml:snakeyaml-engine", version.ref = "snakeyaml-engine" }
 
