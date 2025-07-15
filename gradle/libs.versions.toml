@@ -1,7 +1,7 @@
 [versions]
 assertj-core = "3.+"
 commons-math3 = "3.6.1"
-guava = "33.3.1-jre"
+guava = "33.4.8-jre"
 junit-jupiter = "5.+"
 snakeyaml-engine = "2.+"
 waena = "0.12.0"
