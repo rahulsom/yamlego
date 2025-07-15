@@ -5,6 +5,8 @@ plugins {
     id("jacoco")
 }
 
+description = "Yamlego Core module - provides parsing capability"
+
 dependencies {
     implementation(libs.snakeyaml.engine)
 

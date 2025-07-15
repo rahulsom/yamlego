@@ -1,4 +1,8 @@
 import com.github.rahulsom.waena.WaenaExtension
+import nebula.plugin.contacts.Contact
+import nebula.plugin.contacts.ContactsExtension
+import org.gradle.kotlin.dsl.findByType
+import kotlin.apply
 
 buildscript {
     repositories {
@@ -14,6 +18,14 @@ plugins {
 
 allprojects {
     group = "io.github.rahulsom"
+
+    extensions.findByType<ContactsExtension>()?.apply {
+      addPerson("rahulsom@noreply.github.com", delegateClosureOf<Contact> {
+        moniker("Rahul Somasunderam")
+        roles("owner")
+        github("https://github.com/rahulsom")
+      })
+    }
 }
 
 subprojects {
