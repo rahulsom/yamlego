@@ -6,8 +6,6 @@ plugins {
 }
 
 dependencies {
-    api(libs.commons.math3)
-    implementation(libs.guava)
     implementation(libs.snakeyaml.engine)
 
     testImplementation(libs.junit.jupiter)
