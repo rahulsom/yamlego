@@ -2,7 +2,7 @@
 assertj-core = "3.+"
 junit-jupiter = "5.+"
 snakeyaml-engine = "2.+"
-waena = "0.12.0"
+waena = "0.15.0"
 
 [libraries]
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj-core" }
