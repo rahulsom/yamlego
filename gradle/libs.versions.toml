@@ -1,6 +1,6 @@
 [versions]
 assertj-core = "3.+"
-junit-jupiter = "5.+"
+junit-jupiter = "6.+"
 snakeyaml-engine = "2.+"
 waena = "0.18.1"
 
