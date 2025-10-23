@@ -10,6 +10,6 @@ junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "jun
 snakeyaml-engine = { module = "org.snakeyaml:snakeyaml-engine", version.ref = "snakeyaml-engine" }
 
 [plugins]
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.2.20" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.2.21" }
 waenaPublished = { id = "com.github.rahulsom.waena.published", version.ref = "waena" }
 waenaRoot = { id = "com.github.rahulsom.waena.root", version.ref = "waena" }
