@@ -15,14 +15,12 @@ dependencies {
 
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.assertj.core)
+    testRuntimeOnly(libs.junit.engine)
+    testRuntimeOnly(libs.junit.launcher)
 }
 
-testing {
-    suites {
-        val test by getting(JvmTestSuite::class) {
-            useJUnitJupiter(libs.versions.junit.jupiter)
-        }
-    }
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
 
 java {
