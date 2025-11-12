@@ -32,15 +32,15 @@ java {
 }
 
 tasks.test {
-  finalizedBy(tasks.jacocoTestReport)
+    finalizedBy(tasks.jacocoTestReport)
 }
 
 tasks.jacocoTestReport {
-  dependsOn(tasks.test)
-  reports {
-    xml.required = true
-    html.required = true
-  }
+    dependsOn(tasks.test)
+    reports {
+        xml.required = true
+        html.required = true
+    }
 }
 
 testlogger {
