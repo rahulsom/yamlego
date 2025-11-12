@@ -1,3 +1,4 @@
+import com.diffplug.gradle.spotless.SpotlessExtension
 import com.github.rahulsom.waena.WaenaExtension
 import nebula.plugin.contacts.Contact
 import org.gradle.kotlin.dsl.findByType
@@ -13,24 +14,29 @@ buildscript {
 plugins {
     alias(libs.plugins.waenaRoot)
     alias(libs.plugins.waenaPublished).apply(false)
+    alias(libs.plugins.spotless)
 }
 
 allprojects {
     group = "io.github.rahulsom"
 
+    repositories {
+        mavenCentral()
+    }
+
     contacts {
-      addPerson("rahulsom@noreply.github.com", delegateClosureOf<Contact> {
-        moniker("Rahul Somasunderam")
-        roles("owner")
-        github("https://github.com/rahulsom")
-      })
+        addPerson(
+            "rahulsom@noreply.github.com",
+            delegateClosureOf<Contact> {
+                moniker("Rahul Somasunderam")
+                roles("owner")
+                github("https://github.com/rahulsom")
+            },
+        )
     }
 }
 
 subprojects {
-    repositories {
-        mavenCentral()
-    }
     tasks.withType<AbstractArchiveTask>().configureEach {
         isPreserveFileTimestamps = false
         isReproducibleFileOrder = true
@@ -39,4 +45,15 @@ subprojects {
 
 waena {
     publishMode.set(WaenaExtension.PublishMode.Central)
+}
+
+configure<SpotlessExtension> {
+    kotlin {
+        target("**/*.kt")
+        ktlint("1.7.1")
+    }
+    kotlinGradle {
+        target("*.kts")
+        ktlint("1.7.1")
+    }
 }

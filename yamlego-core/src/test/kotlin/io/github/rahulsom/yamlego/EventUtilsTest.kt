@@ -6,8 +6,9 @@ import org.junit.jupiter.api.Test
 class EventUtilsTest {
     @Test
     fun `doc with key value`() {
-      /* language=yaml  */
-        val input = """
+        // language=yaml
+        val input =
+            """
             ---
             key: value
             """.trimIndent()
@@ -21,14 +22,15 @@ class EventUtilsTest {
             "=VAL :value",
             "-MAP",
             "-DOC",
-            "-STR"
+            "-STR",
         )
     }
 
     @Test
     fun `implicit doc with key value`() {
-      /* language=yaml  */
-        val input = """
+        // language=yaml
+        val input =
+            """
             key: value
             """.trimIndent()
 
@@ -41,14 +43,15 @@ class EventUtilsTest {
             "=VAL :value",
             "-MAP",
             "-DOC",
-            "-STR"
+            "-STR",
         )
     }
 
     @Test
     fun `implicit doc with list`() {
-      /* language=yaml  */
-        val input = """
+        // language=yaml
+        val input =
+            """
             list:
             - one
             - two
@@ -66,14 +69,15 @@ class EventUtilsTest {
             "-SEQ",
             "-MAP",
             "-DOC",
-            "-STR"
+            "-STR",
         )
     }
 
     @Test
     fun `implicit doc with comment`() {
-      /* language=yaml  */
-        val input = """
+        // language=yaml
+        val input =
+            """
             # some comment here
             """.trimIndent()
 
@@ -81,14 +85,15 @@ class EventUtilsTest {
         assertThat(events.map { it.toString() }).containsExactly(
             "+STR",
             "=COM BLOCK  some comment here",
-            "-STR"
+            "-STR",
         )
     }
 
     @Test
     fun `implicit doc anchor and reference`() {
-      /* language=yaml  */
-        val input = """
+        // language=yaml
+        val input =
+            """
             defs:
             - &anc {foo: bar}
             use:
@@ -116,7 +121,7 @@ class EventUtilsTest {
             "-SEQ",
             "-MAP",
             "-DOC",
-            "-STR"
+            "-STR",
         )
     }
 }
