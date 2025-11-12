@@ -1,8 +1,6 @@
 import com.diffplug.gradle.spotless.SpotlessExtension
 import com.github.rahulsom.waena.WaenaExtension
 import nebula.plugin.contacts.Contact
-import org.gradle.kotlin.dsl.findByType
-import kotlin.apply
 
 buildscript {
     repositories {
@@ -53,7 +51,7 @@ configure<SpotlessExtension> {
         ktlint("1.7.1")
     }
     kotlinGradle {
-        target("*.kts")
+        target("**/*.kts")
         ktlint("1.7.1")
     }
 }
