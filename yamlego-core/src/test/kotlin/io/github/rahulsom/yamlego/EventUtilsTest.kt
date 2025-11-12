@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test
 class EventUtilsTest {
     @Test
     fun `doc with key value`() {
+      /* language=yaml  */
         val input = """
             ---
             key: value
@@ -26,6 +27,7 @@ class EventUtilsTest {
 
     @Test
     fun `implicit doc with key value`() {
+      /* language=yaml  */
         val input = """
             key: value
             """.trimIndent()
@@ -45,6 +47,7 @@ class EventUtilsTest {
 
     @Test
     fun `implicit doc with list`() {
+      /* language=yaml  */
         val input = """
             list:
             - one
@@ -69,6 +72,7 @@ class EventUtilsTest {
 
     @Test
     fun `implicit doc with comment`() {
+      /* language=yaml  */
         val input = """
             # some comment here
             """.trimIndent()
@@ -83,6 +87,7 @@ class EventUtilsTest {
 
     @Test
     fun `implicit doc anchor and reference`() {
+      /* language=yaml  */
         val input = """
             defs:
             - &anc {foo: bar}

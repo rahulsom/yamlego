@@ -22,6 +22,7 @@ class YamlegoParserTest {
     @Test
     fun `doc with key value`() {
         val stream = parseYaml(
+          /* language=yaml  */
             """
             ---
             key: value
@@ -53,6 +54,7 @@ class YamlegoParserTest {
     @Test
     fun `implicit doc with key value`() {
         val stream = parseYaml(
+          /* language=yaml  */
             """
             key: value
             """.trimIndent()
@@ -79,6 +81,7 @@ class YamlegoParserTest {
     @Test
     fun `implicit doc with list`() {
         val stream = parseYaml(
+          /* language=yaml  */
             """
             list:
             - one
@@ -123,6 +126,7 @@ class YamlegoParserTest {
     @Test
     fun `implicit doc with comment`() {
         val stream = parseYaml(
+          /* language=yaml  */
             """
             # some comment here
             """.trimIndent()
@@ -143,6 +147,7 @@ class YamlegoParserTest {
     @Test
     fun `map with comment`() {
         val stream = parseYaml(
+          /* language=yaml  */
             """
             key: # some comment here
               value # some other comment here
@@ -167,6 +172,7 @@ class YamlegoParserTest {
     @Test
     fun `implicit doc anchor and reference`() {
         val stream = parseYaml(
+          /* language=yaml  */
             """
             defs:
             - &anc {foo: bar}
@@ -183,13 +189,13 @@ class YamlegoParserTest {
         assertThat(doc.children().first())
             .isInstanceOf(YamlegoEvent.Mappings::class.java)
         val mappings = doc.children().first() as YamlegoEvent.Mappings
-        
+
         val simpleMap = mappings.asSimpleMap()
         assertThat(simpleMap)
             .hasSize(2)
             .containsKey("defs")
             .containsKey("use")
-        
+
         // Verify defs section
         val defs = simpleMap["defs"]
         assertThat(defs).isInstanceOf(YamlegoEvent.Sequence::class.java)
@@ -204,7 +210,7 @@ class YamlegoParserTest {
         val fooValue = defMap["foo"] as YamlegoEvent.Scalar
         assertThat((fooValue.toEvents().first() as ScalarEvent).value)
             .isEqualTo("bar")
-        
+
         // Verify use section
         val use = simpleMap["use"]
         assertThat(use).isInstanceOf(YamlegoEvent.Sequence::class.java)
