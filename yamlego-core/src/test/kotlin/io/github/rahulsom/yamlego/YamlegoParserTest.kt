@@ -21,13 +21,14 @@ class YamlegoParserTest {
 
     @Test
     fun `doc with key value`() {
-        val stream = parseYaml(
-          /* language=yaml  */
-            """
-            ---
-            key: value
-            """.trimIndent()
-        )
+        val stream =
+            parseYaml(
+                // language=yaml
+                """
+                ---
+                key: value
+                """.trimIndent(),
+            )
 
         assertThat(stream.children()).hasSize(1)
         assertThat(stream.children().first())
@@ -53,12 +54,13 @@ class YamlegoParserTest {
 
     @Test
     fun `implicit doc with key value`() {
-        val stream = parseYaml(
-          /* language=yaml  */
-            """
-            key: value
-            """.trimIndent()
-        )
+        val stream =
+            parseYaml(
+                // language=yaml
+                """
+                key: value
+                """.trimIndent(),
+            )
 
         assertThat(stream.children()).hasSize(1)
         assertThat(stream.children().first())
@@ -75,18 +77,19 @@ class YamlegoParserTest {
         val value = simpleMap["key"]
         assertThat(value)
             .isInstanceOf(YamlegoEvent.Scalar::class.java)
-
     }
 
     @Test
     fun `implicit doc with list`() {
-        val stream = parseYaml(
-          /* language=yaml  */
-            """
-            list:
-            - one
-            - two
-            """.trimIndent())
+        val stream =
+            parseYaml(
+                // language=yaml
+                """
+                list:
+                - one
+                - two
+                """.trimIndent(),
+            )
 
         assertThat(stream.children()).hasSize(1)
         assertThat(stream.children().first())
@@ -120,17 +123,17 @@ class YamlegoParserTest {
             .isInstanceOf(ScalarEvent::class.java)
         assertThat((secondScope.toEvents().first() as ScalarEvent).value)
             .isEqualTo("two")
-
     }
 
     @Test
     fun `implicit doc with comment`() {
-        val stream = parseYaml(
-          /* language=yaml  */
-            """
-            # some comment here
-            """.trimIndent()
-        )
+        val stream =
+            parseYaml(
+                // language=yaml
+                """
+                # some comment here
+                """.trimIndent(),
+            )
 
         assertThat(stream.children()).hasSize(1)
         assertThat(stream.children().first())
@@ -146,13 +149,14 @@ class YamlegoParserTest {
 
     @Test
     fun `map with comment`() {
-        val stream = parseYaml(
-          /* language=yaml  */
-            """
-            key: # some comment here
-              value # some other comment here
-            """.trimIndent()
-        )
+        val stream =
+            parseYaml(
+                // language=yaml
+                """
+                key: # some comment here
+                  value # some other comment here
+                """.trimIndent(),
+            )
 
         assertThat(stream.children()).hasSize(1)
         assertThat(stream.children().first())
@@ -171,15 +175,16 @@ class YamlegoParserTest {
 
     @Test
     fun `implicit doc anchor and reference`() {
-        val stream = parseYaml(
-          /* language=yaml  */
-            """
-            defs:
-            - &anc {foo: bar}
-            use:
-            - a: *anc
-            """.trimIndent()
-        )
+        val stream =
+            parseYaml(
+                // language=yaml
+                """
+                defs:
+                - &anc {foo: bar}
+                use:
+                - a: *anc
+                """.trimIndent(),
+            )
 
         assertThat(stream.children()).hasSize(1)
         assertThat(stream.children().first())

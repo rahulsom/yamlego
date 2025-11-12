@@ -3,6 +3,7 @@ assertj-core = "3.+"
 junit-jupiter = "6.+"
 snakeyaml-engine = "2.+"
 waena = "0.20.0"
+spotless = "8.0.0"
 
 [libraries]
 assertj-core = { module = "org.assertj:assertj-core", version.ref = "assertj-core" }
@@ -13,3 +14,4 @@ snakeyaml-engine = { module = "org.snakeyaml:snakeyaml-engine", version.ref = "s
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.2.21" }
 waenaPublished = { id = "com.github.rahulsom.waena.published", version.ref = "waena" }
 waenaRoot = { id = "com.github.rahulsom.waena.root", version.ref = "waena" }
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
